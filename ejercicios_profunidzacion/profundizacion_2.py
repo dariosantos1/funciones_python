@@ -36,12 +36,21 @@ en la lista pueden usar el método nativo de list "count"
 # --------------------------------
 # Aquí copiar la función "lista_aleatoria"
 # ya elaborada en el ejercicio anterior
+def lista_aleatoria (inicio, fin, cantidad) :
+    lista_numeros = []
+    for i in range (cantidad) :
+        numero = random.randrange(inicio, fin+1)
+        lista_numeros.append(numero)
+    return lista_numeros
 
 
 # --------------------------------
 
 # --------------------------------
 # Aquí dentro definir la función contar
+
+def contar (lista,numero_contar) :
+    return lista.count(numero_contar)
 
 
 # --------------------------------
@@ -59,14 +68,26 @@ if __name__ == '__main__':
 
     # lista_numeros = lista_aleatoria()
 
+    lista_numeros = lista_aleatoria(inicio, fin, cantidad)
     # Imprimir en pantalla "lista_numeros" que tendrá
     # los valores retornado por la función "lista_aleatoria":
 
     # print(lista_numeros)
+    print (lista_numeros)
 
     # Luego quiero averiguar cuantas veces se repite el numero 3
     # en la lista aleatoria creada
     # cantidad_tres = contar(lista_numeros, 3)
+    cantidad_tres = contar(lista_numeros, 3)
+    if cantidad_tres == 0 :
+        print ("En la lista no hay ningun numero 3")
+    elif cantidad_tres == 1 :
+        print ("El numero tres se repite", cantidad_tres,"vez")
+    else :
+        print ("El numero tres se repite", cantidad_tres,"veces")
+    
+    
+    
 
     # print(cantidad_tres)
 
